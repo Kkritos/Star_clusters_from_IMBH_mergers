@@ -1,0 +1,33 @@
+Project: Star cluster properties from intermediate-mass black hole mergers
+Author: Konstantinos Kritos
+Date: May 30, 2024
+
+First, goto the current directory, create, and activate a python virtual environment in the terminal:
+> python3 -m venv ./IMBH_ENVIRONMENT
+> source ./IMBH_ENVIRONMENT/bin/activate
+Then, install all required packages:
+> pip install numpy scipy astropy matplotlib tqdm pandas jupyter
+and finally add the venv into the jupyter kernel:
+> python -m ipykernel install --user --name=IMBH_ENVIRONMENT
+
+Run the `Age_Redshift_Table_Planck18.ipynb' notebook to generate the age-redshift lookup table, to be exported in file `ages_redshifts_table_Planck18.npz'. This file contains the arrays `ages' (in Myr) and `redshifts' which can then be loaded and interpolated.
+
+Run the `Tidal_capture_loss_cone_radius.ipynb' notebook to compute the tidal energy dissipated during the hyperbolic encounter of stars with a central massive black hole and export the figure.
+
+Run `Spin_evolution.ipynb' notebook to simulate the evolution of the BH mass-spin relation as the BH growths through the incoherent accretion of stars.
+
+The file `constants_and_functions.py' contains all global constant parameters, functions and samplers required to carry out all calculations. Should be imported in all of the following notebooks.
+
+Run `Visualize_cluster_evolution.ipynb' to reproduce the figures showing the evolution of star clusters and black hole mass in the initial cluster mass - initial half-mass radius parameter space.
+
+Run `Comparison_with_MNRAS521(2023)2,2930.ipynb' to plot the cumulative number of tidal disrutption events as a function of simulation time for the cluster models that match the initial conditions of Rizzuto et al. (2022) as much as possible.
+
+Run `Generate_IMBH_population.ipynb' to generate and export the population of IMBH-IMBH binary mergers from a set of assumed populations of star clusters. It also computes the detectable distributions and plots the results.
+
+Run `Generate_astro_source_posterior_samples.ipynb' to generate and export posterior samples of the six events considered in this project reweighted by the astrophysical prior. Requires folder ./posterior_samples_m1m2tm; results are also exported in this folder.
+
+Run `Generate_cluster_posterior_samples.ipynb' to generate and export cluster posterior samples for all six merger events and under the two evolutionary scenarios considered here, the isolated and tidally limited, and with the two choices of f_s = 0.5, and 0.03.
+
+Run `Plot_astro_cluster_posterior_samples.ipynb' to load and visualize the cluster posteriors.
+
+End of file.
