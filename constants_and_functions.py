@@ -61,7 +61,7 @@ zcl0_mean, zcl0_sigma = 3.2, 1.5
 mBH_min, mBH_max = 100.0, 1500.0
 
 # critical escape velocity:
-vesc0_crit = 100.0
+vesc0_crit = 200.0
 
 # critical minimum BH mass:
 MBH_crit = 100.0
